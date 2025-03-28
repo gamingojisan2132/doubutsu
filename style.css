@@ -1,0 +1,209 @@
+body {
+    background: #f0f0f0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    /* テキスト選択を防止 */
+    -webkit-user-select: none;
+    /* Safari用 */
+    -moz-user-select: none;
+    /* Firefox用 */
+    -ms-user-select: none;
+    /* IE用 */
+}
+
+#canvas-wrapper {
+    width: 100%;
+    max-width: 360px;
+    height: 640px;
+    /* 固定高さを設定 */
+    background: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 85%;
+    margin-top: 5px;
+}
+
+.game-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    flex: 1;
+}
+
+#guide-wrapper,
+#tower-wrapper,
+#stack-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#guide-label,
+#tower-label,
+#stack-label {
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+#tower-container {
+    width: 90px;
+    height: 260px;
+    border: 3px solid #333;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+
+#stack-container {
+    width: 90px;
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    /* バーガーの枠を削除 */
+    background: transparent;
+    /* 背景を透明に */
+}
+
+#guide-container {
+    width: 70px;
+    /* ガイドを小さく */
+    height: 260px;
+    /* 高さ調整 */
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    /* 背景を透明に */
+    border: none;
+    /* 枠を削除 */
+}
+
+.block,
+.stack-block {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.guide-block {
+    width: 100%;
+    height: 30px;
+    /* ガイド内の具材を小さく */
+    position: absolute;
+    left: 0;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0;
+    /* 余白を削除 */
+    padding: 0;
+    /* 余白を削除 */
+}
+
+.block {
+    border: none;
+    transition: border 0.1s;
+}
+
+.stack-block.animate {
+    transition: none;
+}
+
+#line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: red;
+    top: 220px;
+    left: 0;
+    z-index: 10;
+}
+
+#result {
+    margin: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    height: 20px;
+}
+
+#check-button {
+    margin-top: 5px;
+    padding: 6px 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#check-button:hover,
+#check-button.glow {
+    background-color: #45a049;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #fff;
+    }
+
+    100% {
+        box-shadow: 0 0 20px #00ffcc;
+    }
+}
+
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#instructions {
+    margin-top: 5px;
+    width: 90%;
+    font-size: 12px;
+    text-align: left;
+    background: #fff;
+    padding: 8px;
+    border: 2px solid #aaa;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 100px;
+    overflow-y: auto;
+}

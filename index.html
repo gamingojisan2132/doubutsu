@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>バーガースタッカー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="canvas-wrapper">
+    <div id="result"></div>
+    <div id="timer">⏱ 残り: 45 秒</div>
+
+    <div id="game-container">
+      <div class="game-row">
+        <div id="guide-wrapper">
+          <div id="guide-label">ガイド</div>
+          <div id="guide-container" title="Aゾーン（ガイド）"></div>
+        </div>
+
+        <div id="tower-wrapper">
+          <div id="tower-label">パーツ</div>
+          <div id="tower-container" title="タワー">
+            <div id="line"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-row">
+        <div id="stack-zone">
+          <div id="stack-label">バーガー</div>
+          <div id="stack-container" title="積み上げゾーン（C）"></div>
+          <button id="check-button">一丁上がり！</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="instructions">
+      <strong>🎮 ゲームルール：</strong><br>
+      時間内にできるだけ多くのバーガーを正しい順番で組み立てよう！<br>
+      正しい組み合わせで「一丁上がり！」すると残り時間+15秒＆次の注文へ！<br>
+      ※バーガーは必ず上下バンズで具材を挟む形で完成させよう！<br><br>
+
+      <strong>🕹 操作方法：</strong><br>
+      ・画面のどこをタップ/クリックしてもライン上のパーツをスライド<br>
+      ・押しっぱなし中はスクロール速度アップ<br>
+      ・「一丁上がり！」ボタンが光ったらクリックしてバーガー完成！<br>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
